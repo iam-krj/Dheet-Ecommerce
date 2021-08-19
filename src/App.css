@@ -1,69 +1,178 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  /* -----------------------------------Header---------------------------------------------------- */
-  .header{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-  }
-  .header .title{
-    display: flex;
-  }
-  .header .title img{
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -----------------------------------Header---------------------------------------------------- */
+.header{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .title{
+  display: flex;
+}
+.header .title img{
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+.header h2{
+   padding-left: 20px;
+   font-size: 1.8rem;
+   cursor: pointer;
+   padding-top: 5px;
+}
+
+.header input{
+  width: 400px;
+  font-size: 1rem;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 0;
+}
+
+.header input:focus{
+  outline-color: dodgerblue ;
+}
+
+.header ul {
+  list-style-type: none;
+  margin-right: 30px;
+  padding: 0;
+  font-size: 1.3rem;
+  display: inline-block;
+}
+.header svg{
+  width: 25px;
+  height: 25px;
+  margin: 5px 15px 5px 10px;
+  cursor: pointer;
+}
+li {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------Front Page---------------------------------------------- */
+
+.front{
+  width: 100%;
+  height: 700px; 
+  display: flex;
+  /* background-image: url("https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  filter: blur(8px);
+  -webkit-filter: blur(8px); */
+}
+
+
+.left{
+  width: 50%;
+  height: 90%;
+  margin-right: 10%;
+}
+.left .content{
+  width: 450px;
+  height: 200px;
+  margin: 20% auto;
+}
+.left .content h1{
+  font-size: 3rem;
+}
+.left .content p{
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.right{
+  width: 45%;
+  height: 90%;
+  padding-right: 100px;
   
-  .header h2{
-     padding-left: 20px;
-     font-size: 1.8rem;
-     cursor: pointer;
-     padding-top: 5px;
-  }
-  
-  .header input{
-    width: 400px;
-    font-size: 1rem;
-    padding: 8px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    border: 0;
-  }
-  
-  .header input:focus{
-    outline-color: dodgerblue ;
-  }
-  
-  .header ul {
-    list-style-type: none;
-    margin-right: 30px;
-    padding: 0;
-    font-size: 1.3rem;
-    display: inline-block;
-  }
-  .header svg{
-    width: 25px;
-    height: 25px;
-    margin: 5px 15px 5px 10px;
-    cursor: pointer;
-  }
-  li {
-    float: left;
-  }
-  
-  a {
-    display: block;
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  /* ----------------------------------------------------------------------------------------------------------------- */
-  
+}
+
+.right .card{
+  width: 600px;
+  height: 500px;
+  margin: 10% auto;
+  background-image: url("https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+.right .card:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#explore{
+  background-color: dodgerblue;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  font-size: 1.1rem;
+  border-radius:5px;
+  margin-top: 25px;
+  width: 150px;
+  height: 40px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-color: dodgerblue;
+  border-width: 0px;
+}
+#explore:hover{
+  cursor: pointer;
+  background-color: rgb(10, 110, 209);
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+.div{
+  text-align: center;
+}
+.card-component{
+  width: 400px;
+  height: 500px;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.cards{
+  width: 80%;
+  height: 550px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+.card-component .art-image{
+  width: 400px;
+  height: 300px;
+}
+.card-component img{
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.footer{
+  margin-top: 10px;
+  width: 100%;
+  height: 600px;
+  background-color: dodgerblue;
+  color: #fff;
+  text-align: center;
+}
