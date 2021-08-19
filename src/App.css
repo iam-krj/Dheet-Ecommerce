@@ -73,9 +73,6 @@ a {
   width: 100%;
   height: 700px; 
   display: flex;
-  /* background-image: url("https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  filter: blur(8px);
-  -webkit-filter: blur(8px); */
 }
 
 
@@ -111,10 +108,12 @@ a {
   background-image: url("https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  transition: transform 250ms;
 }
 .right .card:hover{
   cursor: pointer;
   opacity: 0.8;
+  transform: translateY(10px);
 }
 
 #explore{
@@ -142,36 +141,97 @@ a {
   text-align: center;
 }
 .card-component{
-  width: 400px;
+  width: 24%;
   height: 500px;
-  border: 2px solid black;
   display: inline-block;
+  margin-right: 2%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  transition: transform 250ms;
+}
+.card-component:hover{
+  cursor: pointer;
+  opacity: 0.9;
+  transform: translateY(10px);
 }
 
 .cards{
-  width: 80%;
+  width: 78%;
   height: 550px;
   white-space: nowrap;
-  overflow-x: scroll;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 11%;
+  margin-right: 11%;
   margin-top: 5%;
 }
 .card-component .art-image{
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: 350px;
 }
 .card-component img{
   width: 100%;
   height: 100%;
 }
+.card-component .card-content{
+  height: 150px;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: rgba(60, 96, 194, 0.966);
+  color: #fff;
+}
+.card-component .card-content h5{
+  margin-top: 10px;
+}
 
 /* --------------------------------------------------------------------------------------------------------------- */
 
-.footer{
-  margin-top: 10px;
-  width: 100%;
+.div2{
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 60px;
+}
+.category{
+  margin-top: 30px;
   height: 600px;
+  width: 66%;
+  margin-right: 20%;
+  margin-left: 18%;
+}
+.category .category-card{
+  height: 45%;
+  width: 40%;
+  margin-right: 5%;
+  margin-left: 5%;
+  display: inline-block;
+  margin-bottom: 5%;
+  transition: transfrom 250ms linear;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.category .category-card .catCard{
+  width: 100%;
+  height: 80%;
+  border-radius: 10%;
+}
+.category .category-card .catCard img{
+  width: 100%;
+  height: 100%;
+}
+.category .category-card h4{
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+.category-card:hover{
+  cursor: pointer;
+  opacity: 0.9;
+  transform: translateY(5px)
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+.footer{
+  margin-top: 100px;
+  width: 100%;
+  height: 100px;
   background-color: dodgerblue;
   color: #fff;
   text-align: center;
