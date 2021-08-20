@@ -1,11 +1,11 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* -----------------------------------Header---------------------------------------------------- */
-.header{
+.header {
   width: 100%;
   height: 60px;
   display: flex;
@@ -13,23 +13,23 @@
   align-items: center;
   justify-content: space-between;
 }
-.header .title{
+.header .title {
   display: flex;
 }
-.header .title img{
+.header .title img {
   width: 40px;
   height: 40px;
   margin-left: 20px;
 }
 
-.header h2{
-   padding-left: 20px;
-   font-size: 1.8rem;
-   cursor: pointer;
-   padding-top: 5px;
+.header h2 {
+  padding-left: 20px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding-top: 5px;
 }
 
-.header input{
+.header input {
   width: 400px;
   font-size: 1rem;
   padding: 8px;
@@ -37,8 +37,8 @@
   border: 0;
 }
 
-.header input:focus{
-  outline-color: dodgerblue ;
+.header input:focus {
+  outline-color: dodgerblue;
 }
 
 .header ul {
@@ -48,7 +48,7 @@
   font-size: 1.3rem;
   display: inline-block;
 }
-.header svg{
+.header svg {
   width: 25px;
   height: 25px;
   margin: 5px 15px 5px 10px;
@@ -69,42 +69,40 @@ a {
 /* ----------------------------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------Front Page---------------------------------------------- */
 
-.front{
+.front {
   width: 100%;
-  height: 700px; 
+  height: 700px;
   display: flex;
   /* background-image: url("https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   filter: blur(8px);
   -webkit-filter: blur(8px); */
 }
 
-
-.left{
+.left {
   width: 50%;
   height: 90%;
   margin-right: 10%;
 }
-.left .content{
+.left .content {
   width: 450px;
   height: 200px;
   margin: 20% auto;
 }
-.left .content h1{
+.left .content h1 {
   font-size: 3rem;
 }
-.left .content p{
+.left .content p {
   margin-top: 10px;
   font-size: 2rem;
 }
 
-.right{
+.right {
   width: 45%;
   height: 90%;
   padding-right: 100px;
-  
 }
 
-.right .card{
+.right .card {
   width: 600px;
   height: 500px;
   margin: 10% auto;
@@ -112,17 +110,17 @@ a {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
-.right .card:hover{
+.right .card:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-#explore{
+#explore {
   background-color: dodgerblue;
   color: #fff;
   padding: 5px 10px 5px 10px;
   font-size: 1.1rem;
-  border-radius:5px;
+  border-radius: 5px;
   margin-top: 25px;
   width: 150px;
   height: 40px;
@@ -132,23 +130,23 @@ a {
   border-color: dodgerblue;
   border-width: 0px;
 }
-#explore:hover{
+#explore:hover {
   cursor: pointer;
   background-color: rgb(10, 110, 209);
 }
 
 /* ---------------------------------------------------------------------------------------------------------- */
-.div{
+.div {
   text-align: center;
 }
-.card-component{
+.card-component {
   width: 400px;
   height: 500px;
   border: 2px solid black;
   display: inline-block;
 }
 
-.cards{
+.cards {
   width: 80%;
   height: 550px;
   white-space: nowrap;
@@ -157,18 +155,18 @@ a {
   margin-right: 10%;
   margin-top: 5%;
 }
-.card-component .art-image{
+.card-component .art-image {
   width: 400px;
   height: 300px;
 }
-.card-component img{
+.card-component img {
   width: 100%;
   height: 100%;
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
 
-.footer{
+.footer {
   margin-top: 10px;
   width: 100%;
   height: 600px;

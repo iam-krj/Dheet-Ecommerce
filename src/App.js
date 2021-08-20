@@ -1,10 +1,10 @@
-import Header from './sections/Header';
-import './App.css';
-import FrontPage from './sections/FrontPage';
+import Header from "./sections/Header";
+import "./App.css";
+import FrontPage from "./sections/FrontPage";
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { updateArt } from "./actions";
-
+import Wallet from "./sections/Wallet";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,11 +18,12 @@ function App() {
         setArts(data);
       });
   }, []);
-  
+
   return (
     <div className="App">
       <Header />
-      <FrontPage arts={arts} />
+      {/* <FrontPage arts={arts} /> */}
+      <Wallet />
     </div>
   );
 }
