@@ -74,7 +74,9 @@ export default function ProductPage({ setPage }) {
                 </span>
               </div>
               <div>
-                <button onClick={() => setShow(true)}>Place a bid</button>
+                <button className="button" onClick={() => setShow(true)}>
+                  Place a bid
+                </button>
               </div>
             </div>
             <div className="right">
@@ -148,8 +150,10 @@ export default function ProductPage({ setPage }) {
       />
       <button
         onClick={() => setPage("wallet")}
-        style={{ position: "absolute", marginLeft: "0px" }}
-      ></button>
+        style={{ position: "absolute", marginLeft: "0px", padding: "10px" }}
+      >
+        Wallet
+      </button>
     </div>
   );
 }

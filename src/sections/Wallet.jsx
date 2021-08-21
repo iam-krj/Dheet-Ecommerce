@@ -2,7 +2,7 @@ import "./Wallet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseAmount, addTransaction, decreaseAmount } from "../actions";
-export default function Wallet({setPage}) {
+export default function Wallet({ setPage }) {
   const addToWallet = () => {
     const add = parseFloat(document.getElementById("add-amount").value);
     if (add > 0) {
@@ -179,7 +179,7 @@ export default function Wallet({setPage}) {
           )}
         </div>
       </div>
-      <button onClick = {()=> setPage('product')}></button>
+      <button onClick={() => setPage("product")}>Product Page</button>
     </div>
   );
 }
