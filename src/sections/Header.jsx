@@ -14,7 +14,7 @@ const Header = () => {
         type="text"
         placeholder="Search items, collections, and accounts"
       />
-      <div>
+      <div className="right-nav">
         <ul>
           <li>
             <a href="">Marketplace</a>

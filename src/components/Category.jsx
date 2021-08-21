@@ -9,15 +9,36 @@ const Category = () => {
   const { category } = useParams();
   const [likes, setLikes] = useState(0);
 
+  const Images = [
+    {
+      Image: "/img/art.jpg",
+      Category: "Art",
+    },
+    {
+      Image: "/img/sports.jpg",
+      Category: "Sports",
+    },
+    {
+      Image: "/img/trading_cards.jfif",
+      Category: "Collectibles",
+    },
+    {
+      Image: "/img/collectibles.jpg",
+      Category: "Trading Cards",
+    },
+  ];
+
   const categoryProducts = products.filter(
     (product) => category === product.Category
   );
-
   return (
     <div>
       <div className="card" style={{ width: "100%" }}>
         <div className="d-flex flex-column align-items-center">
-          <img src="/img/art.jfif" width="100%"></img>
+          <img
+            src={Images.filter((image) => image.Category === category)[0].Image}
+            width="100%"
+          ></img>
           <h1 className="card-title">Explore {category}</h1>
           <p className="card-text" style={{ width: "40%" }}>
             An online community of makers, developers, and traders is pushing
