@@ -36,4 +36,17 @@ const addTransaction = (transaction) => {
     payload: transaction,
   };
 };
-export { updateArt, increaseAmount, decreaseAmount, addTransaction };
+
+const addBid = (productId, amount, name) => {
+  return {
+    type: "ADD_BID",
+    payload: {
+      productId: productId,
+      entry: {
+        name: name,
+        bid: amount,
+      },
+    },
+  };
+};
+export { updateArt, increaseAmount, decreaseAmount, addTransaction, addBid };

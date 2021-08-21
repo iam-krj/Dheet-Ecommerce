@@ -2,9 +2,9 @@ import "./Wallet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseAmount, addTransaction, decreaseAmount } from "../actions";
-export default function Wallet() {
+export default function Wallet({setPage}) {
   const addToWallet = () => {
-    const add = parseInt(document.getElementById("add-amount").value);
+    const add = parseFloat(document.getElementById("add-amount").value);
     if (add > 0) {
       const now = new Date();
       const date =
@@ -110,15 +110,23 @@ export default function Wallet() {
   return (
     <div className="wallet">
       <div className="add_money">
-        <h1 style={{ color: "green", fontSize: "5rem" }}>₹ {walletAmount}</h1>
+        <h1 style={{ fontSize: "5rem" }}>
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/ethereum-1-283135.png"
+            alt=""
+            size="100"
+            style={{ width: "80px", marginBottom: "20px" }}
+          ></img>{" "}
+          {walletAmount}
+        </h1>
         <h1>Add Amount</h1>
         <hr></hr>
-        <input type="Number" placeholder="Amount" id="add-amount"></input>
+        <input type="decimal" placeholder="Amount" id="add-amount"></input>
         <button
           onClick={() => {
             addToWallet();
-            // placedBid();
-            // RefundFromBid();
+            // placedBid(0.1, "NFT");
+            // RefundFromBid(0.5, "Template");
           }}
           className="button"
         >
@@ -153,7 +161,10 @@ export default function Wallet() {
                       <th>{trans.transactionID}</th>
                       <th>{trans.date}</th>
                       <th>{trans.description}</th>
-                      <th style={{ color: colour }}>{sign + trans.amount}</th>
+                      <th style={{ color: colour }}>
+                        {sign + trans.amount}{" "}
+                        <span style={{ color: "black" }}></span>
+                      </th>
                       <th>{trans.product ? trans.product : "-"}</th>
                       <th>
                         <button> report</button>
@@ -168,6 +179,7 @@ export default function Wallet() {
           )}
         </div>
       </div>
+      <button onClick = {()=> setPage('product')}></button>
     </div>
   );
 }

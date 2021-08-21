@@ -1,4 +1,4 @@
-const amountReducer = (state = 0, action) => {
+const amountReducer = (state = 0.0, action) => {
   switch (action.type) {
     case "INCREASE_AMOUNT":
       return state + action.payload;
