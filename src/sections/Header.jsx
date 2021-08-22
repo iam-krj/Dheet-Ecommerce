@@ -1,8 +1,11 @@
 import React from "react";
-
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const JSONDATA = useSelector((state) => state.products);
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <div className="header">
       <Link to="/">
@@ -14,10 +17,50 @@ const Header = () => {
           <h2>Dheet Shop</h2>
         </div>
       </Link>
-      <input
+      {/* <input
         type="text"
         placeholder="Search items, collections, and accounts"
+      /> */}
+
+      <input
+        className="Search2"
+        type="text"
+        placeholder="Search items, collections, and accounts"
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+        }}
       />
+
+      {JSONDATA.filter((val) => {
+        if (searchTerm == "") {
+          return val;
+        } else if (
+          val.Category.toLowerCase().includes(searchTerm.toLowerCase())
+        ) {
+          return val;
+        } else if (val.Name.toLowerCase().includes(searchTerm.toLowerCase())) {
+          return val;
+        }
+      })
+        .slice(0, 5)
+        .map((val, key) => {
+          return (
+            <div className="Search2">
+              {searchTerm.length != 0 && (
+                <a
+                  className="useer"
+                  href={val.Image}
+                  onChange="user"
+                  key={key}
+                  target="_blank"
+                >
+                  <p> {val.Name} </p>{" "}
+                </a>
+              )}
+            </div>
+            // )}
+          );
+        })}
       <div className="right-nav">
         <ul>
           <li>
@@ -51,7 +94,7 @@ const Header = () => {
           <svg
             stroke="currentColor"
             fill="currentColor"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 24 24"
             height="1em"
             width="1em"
