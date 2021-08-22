@@ -1,35 +1,35 @@
 import Header from "./sections/Header";
 import "./App.css";
-// import FrontPage from "./sections/FrontPage";
-// import { useDispatch } from "react-redux";
-import { useState } from "react";
-// import { updateArt } from "./actions";
-import Wallet from "./sections/Wallet";
-import ProductPage from "./sections/ProductPage";
+import FrontPage from "./sections/FrontPage";
+import Category from "./components/Category";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { getProducts } from "./actions/index";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  // const dispatch = useDispatch();
-  // const [arts,setArts] = useState([]);
-  // const [eth, setEth] = useState(null);
-  const [page, setPage] = useState("wallet");
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products);
 
-  // useEffect(() => {
-  //   fetch("/assets/database.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setArts(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
 
   return (
-    <div className="App">
-      <Header />
-      {page === "wallet" ? (
-        <Wallet setPage={setPage} />
-      ) : (
-        <ProductPage setPage={setPage} />
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            {products.length ? <FrontPage products={products} /> : null}
+          </Route>
+          <Route exact path="/:category">
+            <Category />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

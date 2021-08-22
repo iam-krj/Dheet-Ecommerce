@@ -6,7 +6,10 @@ const Card = ({art}) => {
         <div className="art-image">
           <img src={art.Image} alt="" />
         </div>
-        <h5>{art.Owner}</h5>
+        <div className="card-content">
+          <h4>{art.Owner}</h4>
+          <h5>{art.Description}</h5>
+        </div>
       </div>
     );
 }

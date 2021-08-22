@@ -1,10 +1,10 @@
-const updateArt = () => {
+const getProducts = () => {
   return (dispatch) => {
     fetch("/assets/database.json")
       .then((res) => res.json())
       .then((data) => {
         dispatch({
-          type: "UPDATE_ART",
+          type: "GET_PRODUCTS",
           payload: data,
         });
       });
@@ -81,7 +81,7 @@ const addBidtoUser = (productId, amount) => {
   };
 };
 export {
-  updateArt,
+  getProducts,
   increaseAmount,
   decreaseAmount,
   addTransaction,

@@ -1,5 +1,6 @@
-import artReducer from "./artReducer";
+import getProductsReducer from "./getProductsReducer";
 import { combineReducers } from "redux";
+import artReducer from "./artReducer";
 import amountReducer from "./amountReducer";
 import transactionsReducer from "./transactionsReducer";
 import bidsListReducer from "./bidsListReducer";
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   transactions: transactionsReducer,
   bidsList: bidsListReducer,
   userBids: userBidsReducer,
+  products: getProductsReducer,
 });
 
 export default rootReducer;
