@@ -1,5 +1,5 @@
 import "./productpage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Modal from "../components/Modal";
 export default function ProductPage({ setPage }) {
@@ -12,17 +12,19 @@ export default function ProductPage({ setPage }) {
   const description =
     "Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT ";
   const endTime =
-    new Date(2021, 7, 25).getTime() / 1000 -
-    new Date(2021, 7, 23).getTime() / 1000;
+    new Date(2021, 7, 25).getTime() / 1000 - new Date().getTime() / 1000;
   const username = "Hero"; //Add here
   const userBids = useSelector((state) => state.userBids);
   let bidExists = false;
   let existingBid = null;
   const [counter, setCounter] = useState(endTime);
 
-  setInterval(function () {
-    setCounter(counter - 1);
-  }, 1000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter(counter - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [counter]);
 
   for (let i = 0; i < userBids.length; i++) {
     if (userBids[i].productId === productId) {
@@ -51,7 +53,7 @@ export default function ProductPage({ setPage }) {
             {productName} #{productId}
           </h1>
           <span> by {productOwner}</span>
-          <hr />
+          <hr style={{}} />
           <div className="buyingdiv">
             <div className="left">
               <div style={{ fontSize: "1.5rem" }}>Current Highest Bid : </div>
