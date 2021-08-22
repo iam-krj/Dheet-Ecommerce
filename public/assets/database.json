@@ -6,6 +6,7 @@
       "Price": "0.195",
       "Owner": "Dylan Gill Art Studio",
       "Name": "Big Ideas",
+        "Description":"One thought can lead to great things or destructive results.",
       "Image": "https://lh3.googleusercontent.com/Dq8iULf7-Ur5VX1ZHtcbJVreqQi4tVv_ZTsyOe5JPh3BXYmTnTFOTe0YlBlLMmR1Ttr-Y7Va-VbbKvM5Ye-ay98mWbVbsuz6v2D6ww=w600"
     },
     {
@@ -14,6 +15,7 @@
       "Price": "0.196",
       "Owner": "Dylan Gill Art Studio",
       "Name": "Devotion",
+        "Description":"When you pledge your devotion with passion.",
       "Image": "https://lh3.googleusercontent.com/Xi23Li3NqPBLf7_8qUl28fpI4J4YRdIOqiJvttVsJuYqKj64Iv5fw4xVrGVbmG9VvsG7Me5XbOl2NN8n5OwSnkGKyCADZnJubx15=w600"
     },
     {
@@ -22,6 +24,7 @@
       "Price": "0.197",
       "Owner": "Dylan Gill Art Studio",
       "Name": "Resonating Rumours",
+        "Description":"Resonating rumours sometimes stir the imagination.",
       "Image": "https://lh3.googleusercontent.com/oA9pvfyWOb12ibxS691uGbxgXT5aRVmbIz72Fnup-Hpi_iLn_A0SS_XOVWNwGLsm0S6wwKGqMjizQ8l0oeTXQyafl9Mgltdl8QobZw=w600"
     },
     {
@@ -30,6 +33,7 @@
       "Price": "0.198",
       "Owner": "Dylan Gill Art Studio",
       "Name": "The Game Changer",
+        "Description":"That moment when it all falls into place. The life changing occurrence, living your best you.",
       "Image": "https://lh3.googleusercontent.com/2nvYLa37CNhi3SEiS9EDk2uNfAHJMnaZXLClIt20raY1YlZ4PT5b7DSHmx3hi8ARZJhqQ0ZLiIiz7cr6Y0FTM6jbJ-_dMHcVu5kN9Tc=w600"
     },
     {
@@ -38,6 +42,7 @@
       "Price": "0.199",
       "Owner": "Dylan Gill Art Studio",
       "Name": "Natures Way",
+        "Description":"Getting back to nature?",
       "Image": "https://lh3.googleusercontent.com/aIiTKeldMeubMUz6lW4fZP5KZLMM90miKSVIun_6aCt8asd2hZEw5uwypiDdZiEp1C4eJ9WMJM14LTOoQbOxL3GoX4OfqaQ9wltl4Q=w600"
     },
     {
@@ -46,6 +51,7 @@
       "Price": "0.215",
       "Owner": "Dylan Gill Art Studio",
       "Name": "The past, the present & the future of the matrix",
+        "Description":"This artwork depicts life as we know it.",
       "Image": "https://lh3.googleusercontent.com/Mac1XF4KEnEnPgmuvjGetQM4BY7NeMQRd7736kve6JTiDQhUPL6Vx8s2EfrJuevvB5bqBlBeoHUwVaeXZ13wCM6a-p7PsKR_NkgC=w600"
     },
     {
@@ -54,6 +60,7 @@
       "Price": "0.201",
       "Owner": "Dylan Gill Art Studio",
       "Name": "Cryptic Memories",
+        "Description":"Memories create the persona that solidifies us. 3/3",
       "Image": "https://lh3.googleusercontent.com/UhePeOS0ait2GTRzIMUUA0cadKtIcmMIGLDcomLHpvh39q0rWrzMP4KHYQNYRXHRufkl4cmkLViEe4bYo5JUO8xEKJd7x8vXRBIO=w600"
     },
     {
@@ -62,6 +69,7 @@
       "Price": "0.015",
       "Owner": "CryptoDunks",
       "Name": "DRINK NOWHISKEY - Run That Shit Back, Based Common ",
+        "Description":"This tall drink of water may be gone, but will never fade away! It's only a shame he's not around to play wingman to Anthony Edwards--now that would take my breath away! The DRINK NOWHISKEY Based Common is intended as a relatively accessible collectors item, but this special Limited Edition of 99 will never be minted again.",
       "Image": "https://lh3.googleusercontent.com/7mBOc7k6pob217mQu-ddOpNJQcss9R551dfu0v6GRr8yV4JiIPlNFHIXZn1QnS_MbHshB6_tvICl8Wh50F6Vt8B_IBRZyA5NoFw2Hg=w600"
     },
     {
@@ -70,6 +78,7 @@
       "Price": "0.019",
       "Owner": "Sorare",
       "Name": "Tarik 2021-22 • Rare 6/100",
+        "Description":"Rare Player Cards are only issued at 100 editions per season.",
       "Image": "https://lh3.googleusercontent.com/WNvzhVrJ3Sn6HP9dPUnneZPgdN5Mxy3tUU-2ohXk-0Xm05UflIXH-77j3upYy8N5EQeziJ5G18zDcuaYg0K58x8xrmVim5NK-09Lyu8=w600"
     },
     {
@@ -78,6 +87,7 @@
       "Price": "0.023",
       "Owner": "Sorare",
       "Name": "Ashtone Morgan 2021-22 • Rare 23/100",
+        "Description":"Rare Player Cards are only issued at 100 editions per season.",
       "Image": "https://lh3.googleusercontent.com/pAWeIo8_zEN3_dUXIdjZ6Zq7Dly6aiqmpythI6XmRNCH78_pmd_SyZmZSRV7vntDG8dpzLM4tY5XtBL1nhMzN7VoiRNfpboN6rMoNA=w600"
     },
     {
@@ -86,6 +96,7 @@
       "Price": "0.027",
       "Owner": "Sorare",
       "Name": "Ilsinho 2021-22 • Rare 19/100",
+        "Description":"Rare Player Cards are only issued at 100 editions per season.",
       "Image": "https://lh3.googleusercontent.com/O1cAtCwlLOnb4wwbv6Te_RiDtOh84Y_kBPJsTaKIqriO7MpODNYV0i1sLjszDxJWwzTAScicyx2xjUzbJ65nzdmbpccq0jDUoV2fNPU=w600"
     },
     {
@@ -94,6 +105,7 @@
       "Price": "0.031",
       "Owner": "Sorare",
       "Name": "François Marquet 2019-20 • Rare 4/100",
+        "Description":"Rare Player Cards are only issued at 100 editions per season.",
       "Image": "https://lh3.googleusercontent.com/k8Qv8X07U6jzvo4H1A-L8czrbaMwkwGMGOugqm1bR4v2_Sl541bSMbNgPVZnVX-awT2NZWSFFc2fI3Qmecxq-m4=w600"
     },
     {
@@ -102,6 +114,7 @@
       "Price": "0.035",
       "Owner": "F1® Delta Time",
       "Name": "Boots",
+        "Description":"The driver's fireproof ankle boots are made of soft, cushioned leather with thin rubber soles to provide accurate and slip-free contact with the car's pedals.",
       "Image": "https://lh3.googleusercontent.com/YpqxwSkZDpdTp5jV_QUlvFHFMX1g8vWakmmnR-JWwH_RRJ5HdkF8Md_4JyQC8nsNafl2bMkglAUT7wMWGoPgZTaLA4DLPA3CTDCE=w600"
     },
     {
