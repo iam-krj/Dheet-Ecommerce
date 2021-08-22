@@ -1,6 +1,5 @@
 {
   "name": "ecommerce",
-  "homepage": "https://github.com/Dheet-Developer-Team/Dheet-Ecommerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

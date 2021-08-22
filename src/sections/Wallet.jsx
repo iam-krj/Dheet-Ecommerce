@@ -179,7 +179,6 @@ export default function Wallet({ setPage }) {
           )}
         </div>
       </div>
-      <button onClick={() => setPage("product")}>Product Page</button>
     </div>
   );
 }

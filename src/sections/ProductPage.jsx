@@ -1,14 +1,16 @@
 import "./productpage.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 import Modal from "../components/Modal";
 export default function ProductPage({ setPage }) {
   // Fetch image,productName,productOwner, productId, description, username, endTime
-  const image =
-    "https://lh3.googleusercontent.com/3_Ca9zjGbUZ4K3QwTi2vIJnmYkS56DNMdeYtVbYEIMSxshqiKWYBbS8ZSHsYFeQGH_Zg4_CFH4r1FyyDHxJ1gCpknKqJf8uacMbDYA=w600";
-  const productName = "Space Punk";
-  const productOwner = "Spacepunks";
-  const productId = 10;
+  const { id } = useParams();
+  const product = useSelector((state) => state.products)[id - 1];
+  const image = product.Image;
+  const productName = product.Name;
+  const productOwner = product.Owner;
+  const productId = product.ID;
   const description =
     "Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT ";
   const endTime =
@@ -180,12 +182,12 @@ export default function ProductPage({ setPage }) {
         bidExists={bidExists}
         existingBid={existingBid}
       />
-      <button
+      {/* <button
         onClick={() => setPage("wallet")}
         style={{ position: "absolute", marginLeft: "0px", padding: "10px" }}
       >
         Wallet
-      </button>
+      </button> */}
     </div>
   );
 }

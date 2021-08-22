@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 // import { useDispatch,useSelector } from 'react-redux'
 
 const Category = () => {
   const products = useSelector((state) => state.products);
   const { category } = useParams();
-  const [likes, setLikes] = useState(0);
+  const arr = [];
+  for (let i = 0; i < 50; i++) {
+    arr.push({ count: 0 });
+  }
+
+  const [likes, setLikes] = useState([...arr]);
 
   const Images = [
     {
@@ -80,12 +86,19 @@ const Category = () => {
               <div>
                 <img
                   src="/img/heart.png"
-                  onClick={() => setLikes(likes + 1)}
+                  onClick={() => {
+                    const temp = [...likes];
+                    temp[pr.ID - 1].count += 1;
+                    setLikes(temp);
+                    // console.log(temp[pr.ID - 1]);
+                  }}
                 ></img>
-                {likes ? likes : null}
+                {likes[pr.ID - 1].count ? likes[pr.ID - 1].count : null}
               </div>
             </div>
-            <img src={pr.Image} height="200px" width="100%"></img>
+            <Link to={`/product/${pr.ID}`}>
+              <img src={pr.Image} height="200px" width="100%"></img>
+            </Link>
             <div className="container">
               <div className="row" style={{ fontSize: "0.8rem" }}>
                 <div className="col-8">{pr.Name}</div>

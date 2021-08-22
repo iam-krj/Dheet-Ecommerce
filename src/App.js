@@ -2,11 +2,14 @@ import Header from "./sections/Header";
 import "./App.css";
 import FrontPage from "./sections/FrontPage";
 import Category from "./components/Category";
+import ProductPage from "./sections/ProductPage";
+import Wallet from "./sections/Wallet";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getProducts } from "./actions/index";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Redirect } from "react-router";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +26,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             {products.length ? <FrontPage products={products} /> : null}
+          </Route>
+          <Route exact path="/wallet" component={Wallet} />
+          <Route exact path="/product/:id">
+            <ProductPage />
           </Route>
           <Route exact path="/:category">
             <Category />
