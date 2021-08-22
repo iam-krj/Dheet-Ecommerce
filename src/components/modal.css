@@ -13,7 +13,7 @@
   border-radius: 10px;
 }
 #modal_bg {
-  position: absolute;
+  position: fixed;
   min-height: 100%;
   width: 100vw;
   background-color: black;

@@ -1,5 +1,3 @@
-import React from "react";
-
 const updateArt = () => {
   return (dispatch) => {
     fetch("/assets/database.json")
@@ -45,8 +43,50 @@ const addBid = (productId, amount, name) => {
       entry: {
         name: name,
         bid: amount,
+        user: true,
       },
     },
   };
 };
-export { updateArt, increaseAmount, decreaseAmount, addTransaction, addBid };
+
+const increaseBid = (productId, amount) => {
+  return {
+    type: "INCREASE_BID",
+    productId: productId,
+    payload: {
+      bid: amount,
+    },
+  };
+};
+
+const editBidofUser = (productId, amount) => {
+  return {
+    type: "EDIT_BID_OF_USER",
+    payload: {
+      productId: productId,
+      bid: amount,
+      top: true,
+    },
+  };
+};
+
+const addBidtoUser = (productId, amount) => {
+  return {
+    type: "ADD_BID_TO_USER",
+    payload: {
+      productId: productId,
+      bid: amount,
+      top: true,
+    },
+  };
+};
+export {
+  updateArt,
+  increaseAmount,
+  decreaseAmount,
+  addTransaction,
+  addBid,
+  addBidtoUser,
+  increaseBid,
+  editBidofUser,
+};

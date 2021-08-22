@@ -3,35 +3,34 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import Modal from "../components/Modal";
 export default function ProductPage({ setPage }) {
-  function secondsToTime(secs) {
-    const hours = Math.floor(secs / (60 * 60));
-
-    const divisor_for_minutes = secs % (60 * 60);
-    const minutes = Math.floor(divisor_for_minutes / 60);
-
-    const divisor_for_seconds = divisor_for_minutes % 60;
-    const seconds = Math.ceil(divisor_for_seconds);
-
-    const obj = {
-      h: hours,
-      m: minutes,
-      s: seconds,
-    };
-    return obj;
-  }
-
-  // Fethc image,productName,productOwner, productId, description, username, endTime
+  // Fetch image,productName,productOwner, productId, description, username, endTime
   const image =
     "https://lh3.googleusercontent.com/3_Ca9zjGbUZ4K3QwTi2vIJnmYkS56DNMdeYtVbYEIMSxshqiKWYBbS8ZSHsYFeQGH_Zg4_CFH4r1FyyDHxJ1gCpknKqJf8uacMbDYA=w600";
   const productName = "Space Punk";
   const productOwner = "Spacepunks";
   const productId = 10;
-  const description = "Very good NFT";
-  const now = new Date();
+  const description =
+    "Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT ";
+  const endTime =
+    new Date(2021, 7, 25).getTime() / 1000 -
+    new Date(2021, 7, 23).getTime() / 1000;
   const username = "Hero"; //Add here
-  const endTime = secondsToTime(
-    Math.floor((now.getTime() % 31536000000) / 1000)
-  );
+  const userBids = useSelector((state) => state.userBids);
+  let bidExists = false;
+  let existingBid = null;
+  const [counter, setCounter] = useState(endTime);
+
+  setInterval(function () {
+    setCounter(counter - 1);
+  }, 1000);
+
+  for (let i = 0; i < userBids.length; i++) {
+    if (userBids[i].productId === productId) {
+      bidExists = true;
+      existingBid = userBids[i];
+      break;
+    }
+  }
 
   const bidsList = useSelector((state) => state.bidsList)[productId - 1];
   let highest = -1;
@@ -75,14 +74,22 @@ export default function ProductPage({ setPage }) {
               </div>
               <div>
                 <button className="button" onClick={() => setShow(true)}>
-                  Place a bid
+                  {bidExists ? "Increase Bid" : "Place a Bid"}
                 </button>
               </div>
             </div>
             <div className="right">
-              <div>Ends in:</div>
-              <h1>
-                {endTime.h}:{endTime.m}:{endTime.s}
+              <div style={{ fontSize: "1.5rem" }}>Ends in:</div>
+              <h1
+                style={{
+                  fontSize: "3rem",
+                  fontWeight: "500",
+                  marginTop: "10px",
+                }}
+              >
+                {Math.floor(counter / (60 * 60))}:
+                {Math.floor((counter % (60 * 60)) / 60)}:
+                {Math.ceil((counter % (60 * 60)) % 60)}
               </h1>
             </div>
           </div>
@@ -94,10 +101,16 @@ export default function ProductPage({ setPage }) {
                 fontSize: "1.2rem",
               }}
             >
+              <img
+                src="https://static.thenounproject.com/png/138376-200.png"
+                alt=""
+                width="25px "
+                style={{ transform: "translateY(-8%)", marginRight: "10px" }}
+              ></img>
               Description
             </div>
             <hr />
-            <div className="desc" style={{ padding: "0px 20px" }}>
+            <div className="desc" style={{ padding: "0px 0px 20px 20px" }}>
               {description}
             </div>
           </div>
@@ -111,11 +124,17 @@ export default function ProductPage({ setPage }) {
             fontSize: "1.2rem",
           }}
         >
-          Listings
+          <img
+            src="https://icons-for-free.com/iconfiles/png/512/format+list+icon-1320183326433350365.png"
+            alt=""
+            width="25px "
+            style={{ transform: "translateY(-8%)", marginRight: "10px" }}
+          ></img>
+          <span style={{ fontSize: "1.3rem" }}>Offers</span>
         </div>
         <hr></hr>
         <table
-          class="table table-striped"
+          className="table table-striped"
           stlye={{ borderCollapse: "initial" }}
         >
           <thead>
@@ -131,8 +150,17 @@ export default function ProductPage({ setPage }) {
               return (
                 <tr key={idx}>
                   <th>{idx + 1}</th>
-                  <th>{item.bid}</th>
-                  <th>{item.bid}</th>
+                  <th>
+                    {" "}
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/ethereum-1-283135.png"
+                      alt=""
+                      size="100"
+                      style={{ width: "20px", transform: "translateY(-10%)" }}
+                    ></img>{" "}
+                    {item.bid}
+                  </th>
+                  <th>{"₹ " + (item.bid * 243974.0).toFixed(2)}</th>
                   <th>{item.name}</th>
                 </tr>
               );
@@ -147,6 +175,8 @@ export default function ProductPage({ setPage }) {
         name={username}
         productId={productId}
         productName={productName}
+        bidExists={bidExists}
+        existingBid={existingBid}
       />
       <button
         onClick={() => setPage("wallet")}

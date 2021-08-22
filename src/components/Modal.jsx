@@ -1,7 +1,14 @@
 import "./modal.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addBid, decreaseAmount, addTransaction } from "../actions";
+import {
+  addBid,
+  decreaseAmount,
+  addTransaction,
+  addBidtoUser,
+  editBidofUser,
+  increaseBid,
+} from "../actions";
 
 export default function Modal({
   show,
@@ -10,11 +17,11 @@ export default function Modal({
   name = "Raju",
   highest_bid = 0.66,
   productName = "sexyNFT",
+  bidExists,
+  existingBid,
 }) {
-  const placedBid = (amount = 100, productName = "sexy NFT") => {
-    // Fetch deduct from somewhere
-    const deduct = amount;
-    if (deduct > 0) {
+  const placeBid = (amount = 100, productName = "sexy NFT") => {
+    if (amount > 0) {
       const now = new Date();
       const date =
         now.getDate() +
@@ -31,12 +38,12 @@ export default function Modal({
         " " +
         "UTC" +
         +now.getTimezoneOffset() / 60;
-      dispatch(decreaseAmount(deduct));
+      dispatch(decreaseAmount(amount));
       dispatch(
         addTransaction({
           transactionID: Math.floor((Math.random() + 1) * 1000000000),
           description: "Placed in bid",
-          amount: deduct,
+          amount: amount,
           increment: false,
           product: productName, //Add product
           date: date + " " + time,
@@ -54,38 +61,75 @@ export default function Modal({
         <span id="close_button" onClick={() => setShow(false)}>
           +
         </span>
-        <div className="wallet_display">Wallet : {wallet_amt} ETH </div>
-        <div className="bid_display">
-          Current Highest Bid : {highest_bid} ETH{" "}
-        </div>
-        <div className="inputs">
-          <label> Amount : </label>
-          <input
-            id="bid_amount"
-            type="number"
-            placeholder="Enter Amount"
-            onChange={(e) => {
-              setBid(e.target.value);
-            }}
-          ></input>
-          <br />
-          <input id="anony" type="checkbox"></input>{" "}
-          <span style={{ fontSize: "0.8rem" }}>Bid Anonymously</span>
-        </div>
-        <button
-          className="button"
-          onClick={() => {
-            const anonymous = document.getElementById("anony").checked;
-            if (bid > highest_bid && bid <= wallet_amt) {
-              if (anonymous) dispatch(addBid(productId, bid, "Anonymous"));
-              else dispatch(addBid(productId, bid, name));
-              setShow(false);
-              placedBid(bid, productName);
-            }
+        <div
+          className="container"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          Place Bid
-        </button>
+          {" "}
+          <div className="wallet_display">Wallet : {wallet_amt} ETH </div>
+          {bidExists ? (
+            <>
+              <div>
+                Your Previous Bid : {existingBid.bid} ETH{" "}
+                <div>
+                  Total : {parseFloat(wallet_amt) + parseFloat(existingBid.bid)}{" "}
+                  ETH
+                </div>
+              </div>
+            </>
+          ) : (
+            ""
+          )}
+          <div className="bid_display">
+            Current Highest Bid : {highest_bid} ETH{" "}
+          </div>
+          <div className="inputs">
+            <label> Amount : </label>
+            <input
+              id="bid_amount"
+              type="number"
+              placeholder="Enter Amount"
+              onChange={(e) => {
+                setBid(e.target.value);
+              }}
+            ></input>
+            <br />
+            {bidExists ? "" : <input id="anony" type="checkbox"></input>}
+            {bidExists ? (
+              ""
+            ) : (
+              <span style={{ fontSize: "0.8rem" }}>Bid Anonymously</span>
+            )}
+          </div>
+          <button
+            className="button"
+            onClick={() => {
+              if (
+                bidExists &&
+                bid > highest_bid &&
+                bid <= parseFloat(existingBid.bid) + parseFloat(wallet_amt)
+              ) {
+                placeBid(bid - parseFloat(existingBid.bid), productName);
+                dispatch(increaseBid(productId, bid));
+                dispatch(editBidofUser(productId, bid));
+                setShow(false);
+              } else if (bid > highest_bid && bid <= wallet_amt) {
+                const anonymous = document.getElementById("anony").checked;
+                if (anonymous) dispatch(addBid(productId, bid, "Anonymous"));
+                else dispatch(addBid(productId, bid, name));
+                setShow(false);
+                placeBid(bid, productName);
+                dispatch(addBidtoUser(productId, bid));
+              }
+            }}
+          >
+            Place Bid
+          </button>
+        </div>
         <div>
           {bid <= highest_bid ? (
             <li style={{ color: "red" }}>
@@ -94,7 +138,13 @@ export default function Modal({
           ) : (
             ""
           )}
-          {bid > wallet_amt ? (
+          {bid > wallet_amt && !bidExists ? (
+            <li style={{ color: "red" }}>Not enough money in the wallet</li>
+          ) : (
+            ""
+          )}
+          {bidExists &&
+          bid > parseFloat(wallet_amt) + parseFloat(existingBid.bid) ? (
             <li style={{ color: "red" }}>Not enough money in the wallet</li>
           ) : (
             ""

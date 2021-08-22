@@ -1,7 +1,7 @@
 import "./Wallet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseAmount, addTransaction, decreaseAmount } from "../actions";
+import { increaseAmount, addTransaction } from "../actions";
 export default function Wallet({ setPage }) {
   const addToWallet = () => {
     const add = parseFloat(document.getElementById("add-amount").value);
@@ -35,74 +35,74 @@ export default function Wallet({ setPage }) {
     }
   };
   // Add and product variables
-  const RefundFromBid = (amount = 100, productName = "sexy NFT") => {
-    //Export add form somewhere
-    const add = amount;
-    if (add > 0) {
-      const now = new Date();
-      const date =
-        now.getDate() +
-        "/" +
-        parseInt(now.getMonth() + 1) +
-        "/" +
-        now.getFullYear();
-      const time =
-        ("0" + now.getHours()).slice(-2) +
-        ":" +
-        ("0" + now.getMinutes()).slice(-2) +
-        ":" +
-        ("0" + now.getSeconds()).slice(-2) +
-        " " +
-        "UTC" +
-        +now.getTimezoneOffset() / 60;
-      dispatch(increaseAmount(add));
-      dispatch(
-        addTransaction({
-          transactionID: Math.floor((Math.random() + 1) * 1000000000),
-          description: "Refund from Bid",
-          amount: add,
-          increment: true,
-          product: productName, //Fetch product
-          date: date + " " + time,
-        })
-      );
-    }
-  };
+  // const RefundFromBid = (amount = 100, productName = "sexy NFT") => {
+  //   //Export add form somewhere
+  //   const add = amount;
+  //   if (add > 0) {
+  //     const now = new Date();
+  //     const date =
+  //       now.getDate() +
+  //       "/" +
+  //       parseInt(now.getMonth() + 1) +
+  //       "/" +
+  //       now.getFullYear();
+  //     const time =
+  //       ("0" + now.getHours()).slice(-2) +
+  //       ":" +
+  //       ("0" + now.getMinutes()).slice(-2) +
+  //       ":" +
+  //       ("0" + now.getSeconds()).slice(-2) +
+  //       " " +
+  //       "UTC" +
+  //       +now.getTimezoneOffset() / 60;
+  //     dispatch(increaseAmount(add));
+  //     dispatch(
+  //       addTransaction({
+  //         transactionID: Math.floor((Math.random() + 1) * 1000000000),
+  //         description: "Refund from Bid",
+  //         amount: add,
+  //         increment: true,
+  //         product: productName, //Fetch product
+  //         date: date + " " + time,
+  //       })
+  //     );
+  //   }
+  // };
 
   //Deduct & product variable
-  const placedBid = (amount = 100, productName = "sexy NFT") => {
-    // Fetch deduct from somewhere
-    const deduct = amount;
-    if (deduct > 0) {
-      const now = new Date();
-      const date =
-        now.getDate() +
-        "/" +
-        parseInt(now.getMonth() + 1) +
-        "/" +
-        now.getFullYear();
-      const time =
-        ("0" + now.getHours()).slice(-2) +
-        ":" +
-        ("0" + now.getMinutes()).slice(-2) +
-        ":" +
-        ("0" + now.getSeconds()).slice(-2) +
-        " " +
-        "UTC" +
-        +now.getTimezoneOffset() / 60;
-      dispatch(decreaseAmount(deduct));
-      dispatch(
-        addTransaction({
-          transactionID: Math.floor((Math.random() + 1) * 1000000000),
-          description: "Placed in bid",
-          amount: deduct,
-          increment: false,
-          product: productName, //Add product
-          date: date + " " + time,
-        })
-      );
-    }
-  };
+  // const placedBid = (amount = 100, productName = "sexy NFT") => {
+  //   // Fetch deduct from somewhere
+  //   const deduct = amount;
+  //   if (deduct > 0) {
+  //     const now = new Date();
+  //     const date =
+  //       now.getDate() +
+  //       "/" +
+  //       parseInt(now.getMonth() + 1) +
+  //       "/" +
+  //       now.getFullYear();
+  //     const time =
+  //       ("0" + now.getHours()).slice(-2) +
+  //       ":" +
+  //       ("0" + now.getMinutes()).slice(-2) +
+  //       ":" +
+  //       ("0" + now.getSeconds()).slice(-2) +
+  //       " " +
+  //       "UTC" +
+  //       +now.getTimezoneOffset() / 60;
+  //     dispatch(decreaseAmount(deduct));
+  //     dispatch(
+  //       addTransaction({
+  //         transactionID: Math.floor((Math.random() + 1) * 1000000000),
+  //         description: "Placed in bid",
+  //         amount: deduct,
+  //         increment: false,
+  //         product: productName, //Add product
+  //         date: date + " " + time,
+  //       })
+  //     );
+  //   }
+  // };
   const dispatch = useDispatch();
   const walletAmount = useSelector((state) => state.wallet_amt);
   const transactions = useSelector((state) => state.transactions);
@@ -139,7 +139,7 @@ export default function Wallet({ setPage }) {
 
         <div>
           {transactions.length ? (
-            <table class="table table-striped">
+            <table className="table table-striped">
               <thead>
                 <tr>
                   <th>S.No.</th>
