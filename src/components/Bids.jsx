@@ -1,5 +1,6 @@
 // import React, { useState } from "react";
 import { BidsData } from "./BidsData";
+import {useSelector} from 'react-redux';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Bids = () => {
@@ -12,7 +13,10 @@ const Bids = () => {
   //   return a - b;
   // });
   // console.log(rank)
-
+  const products = useSelector((state)=>state.products);
+  const userBids = useSelector((state)=>state.userBids);
+  const styleArray = ["table-primary","table-secondary","table-success","table-info","table-warning"]
+  console.log(products,userBids);
   return (
     <div
       className="your-bids"
@@ -22,27 +26,27 @@ const Bids = () => {
         <thead>
           <tr>
             <th scope="col">Item</th>
-            <th scope="col">Rank change</th>
+            <th scope="col">Highest Bidder</th>
             <th scope="col">bidamt</th>
             <th scope="col">Expires-in</th>
           </tr>
         </thead>
         <tbody>
-          {BidsData.map((item, index) => {
+          {userBids.map((item, index) => {
             return (
               <tr
-                className={item.cName}
+                className={styleArray[index%styleArray.length]}
                 key={index}
                 style={{ border: "1px solid black", borderRadius: "15px" }}
               >
                 <img
-                  src={item.Image}
+                  src={products[item.productId-1].Image}
                   alt="item picture"
                   style={{ height: "222px", width: "154px" }}
                 ></img>
-                <td>{index}</td>
-                <td>{item.bidamt}</td>
-                <td>{item.time}</td>
+                <td>You</td>
+                <td>{item.bid}</td>
+                <td>25th August</td>
               </tr>
             );
           })}
