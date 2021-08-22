@@ -4,6 +4,7 @@ import FrontPage from "./sections/FrontPage";
 import Category from "./components/Category";
 import ProductPage from "./sections/ProductPage";
 import Wallet from "./sections/Wallet";
+import Bids from "./components/Bids";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getProducts } from "./actions/index";
@@ -27,6 +28,8 @@ function App() {
           <Route exact path="/">
             {products.length ? <FrontPage products={products} /> : null}
           </Route>
+
+          <Route exact path="/bids" component={Bids} />
           <Route exact path="/wallet" component={Wallet} />
           <Route exact path="/product/:id">
             <ProductPage />
