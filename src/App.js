@@ -10,6 +10,7 @@ import SignUp from "./components/signup";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getProducts } from "./actions/index";
+import FooterPagePro from './sections/Footer';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router";
@@ -42,6 +43,7 @@ function App() {
             <Category />
           </Route>
         </Switch>
+        <FooterPagePro/>
       </div>
     </Router>
   );
