@@ -1,15 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
 import { useState,useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import './header.css';
-=======
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { login } from "../actions";
 import { useSelector, useDispatch } from "react-redux";
->>>>>>> f9027508ce441f9e789d2e7b8eb944c037d45bdf
 
 const Header = () => {
   const loggedin = useSelector((state) => state.loggedin);
@@ -17,11 +11,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const JSONDATA = useSelector((state) => state.products);
   const [searchTerm, setSearchTerm] = useState("");
-<<<<<<< HEAD
   const [resultList,setResultList] = useState([]);
-=======
 
->>>>>>> f9027508ce441f9e789d2e7b8eb944c037d45bdf
   return (
     <div className="header">
       <Link to="/">
