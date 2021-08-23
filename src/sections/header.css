@@ -7,9 +7,6 @@
     left:400px;
     z-index: 1;
 }
-#search-results{
-    /* border:1px solid black; */
-}
 
 #search-results > *{
     margin: 5px auto;

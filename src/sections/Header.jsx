@@ -28,9 +28,7 @@ const Header = () => {
         className="Search2"
         type="text"
         placeholder="Search items, collections, and accounts"
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-        }}
+        onChange={(event) => setSearchTerm(event.target.value)}
       />
  
       {useEffect(()=>{setResultList(JSONDATA.filter((val) => {
@@ -74,20 +72,6 @@ const Header = () => {
             </div>
      
       <div className="right-nav">
-        <ul>
-          <li>
-            <a href="">Marketplace</a>
-          </li>
-          <li>
-            <a href="">Stats</a>
-          </li>
-          <li>
-            <a href="">Resources</a>
-          </li>
-          <li>
-            <a href="">Create</a>
-          </li>
-        </ul>
         <Link to="/bids">
           <svg
             stroke="currentColor"
@@ -117,7 +101,7 @@ const Header = () => {
           </svg>
         </Link>
         <Link to="/login">
-          <img src="/img/enter.png" alt = ""></img>
+          <img src="/img/enter.png" alt="login"></img>
         </Link>
       </div>
     </div>

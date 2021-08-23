@@ -46,11 +46,11 @@ const FrontPage = ({ products }) => {
         </div>
       </div>
       <div className="div">
-        <h1>Exclusive OpenSea drops</h1>
+        <h1>Exclusive drops</h1>
       </div>
       <div className="cards">
-        {products.slice(0, 4).map((art) => (
-          <Card art={art} />
+        {products.slice(0, 4).map((art, index) => (
+          <Card key={index} art={art} />
         ))}
       </div>
 
@@ -60,7 +60,7 @@ const FrontPage = ({ products }) => {
 
       <div className="category">
         {Category.map((art, index) => (
-          <Link to={`/${Category[index].Category}`}>
+          <Link key={index} to={`/${Category[index].Category}`}>
             <CategoryCard art={art} />
           </Link>
         ))}

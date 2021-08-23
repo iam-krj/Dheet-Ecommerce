@@ -8,11 +8,11 @@ import Bids from "./components/Bids";
 import login from "./components/login";
 import SignUp from "./components/signup";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getProducts } from "./actions/index";
+import FooterPagePro from "./sections/Footer";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
@@ -42,6 +42,7 @@ function App() {
             <Category />
           </Route>
         </Switch>
+        <FooterPagePro />
       </div>
     </Router>
   );
