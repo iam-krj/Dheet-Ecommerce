@@ -43,6 +43,7 @@ const Category = () => {
         <div className="d-flex flex-column align-items-center">
           <img
             src={Images.filter((image) => image.Category === category)[0].Image}
+            alt="category"
             width="100%"
           ></img>
           <h1 className="card-title">Explore {category}</h1>
@@ -65,7 +66,7 @@ const Category = () => {
             aria-expanded="false"
             aria-controls="collapseExample"
           >
-            <img src="/img/down-arrow.png"></img>
+            <img src="/img/down-arrow.png" alt="arrow"></img>
           </div>
         </div>
       </div>
@@ -74,8 +75,9 @@ const Category = () => {
         className="d-flex flex-wrap"
         style={{ width: "80%", margin: "auto" }}
       >
-        {categoryProducts.map((pr) => (
+        {categoryProducts.map((pr, index) => (
           <div
+            key={index}
             className="d-flex flex-column align-items-center cat-card"
             style={{
               width: "20%",
@@ -86,6 +88,7 @@ const Category = () => {
               <div>
                 <img
                   src="/img/heart.png"
+                  alt="item"
                   onClick={() => {
                     const temp = [...likes];
                     temp[pr.ID - 1].count += 1;
@@ -97,7 +100,12 @@ const Category = () => {
               </div>
             </div>
             <Link to={`/product/${pr.ID}`}>
-              <img src={pr.Image} height="200px" width="100%"></img>
+              <img
+                src={pr.Image}
+                height="200px"
+                width="100%"
+                alt="product"
+              ></img>
             </Link>
             <div className="container">
               <div className="row" style={{ fontSize: "0.8rem" }}>
@@ -105,7 +113,7 @@ const Category = () => {
                 <div className="col">
                   Min bid.
                   <div>
-                    <img src="/img/ruby.png"></img>
+                    <img src="/img/ruby.png" alt="ruby"></img>
                     <span>{pr.Price}</span>
                   </div>
                 </div>

@@ -42,7 +42,7 @@ function Login() {
           Submit
         </button>
         <p className="forgot-password">
-          <a href="#">Forgot Password</a>
+          <p>Forgot Password</p>
         </p>
         <Link to="/signup">
           <p className="text-left">SignUp</p>

@@ -8,7 +8,7 @@ import Bids from "./components/Bids";
 import login from "./components/login";
 import SignUp from "./components/signup";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getProducts } from "./actions/index";
 import FooterPagePro from "./sections/Footer";
 
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
