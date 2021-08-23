@@ -80,6 +80,19 @@ const addBidtoUser = (productId, amount) => {
     },
   };
 };
+
+const login = () => {
+  return {
+    type: "TOGGLE_LOGIN",
+  };
+};
+
+const userInfo = (data) => {
+  return {
+    type: "USER_INFO",
+    payload: data,
+  };
+};
 export {
   getProducts,
   increaseAmount,
@@ -89,4 +102,6 @@ export {
   addBidtoUser,
   increaseBid,
   editBidofUser,
+  login,
+  userInfo,
 };

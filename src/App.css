@@ -20,9 +20,12 @@
   align-items: center;
   justify-content: center;
 }
+.header .title h2 {
+  text-decoration: none;
+}
 .header .title img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin-left: 20px;
 }
 
@@ -185,6 +188,7 @@ a {
   font-size: 1.5rem;
   background-color: rgba(60, 96, 194, 0.966);
   color: #fff;
+  overflow: hidden;
 }
 .card-component .card-content h5 {
   margin-top: 10px;
