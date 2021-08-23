@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { login } from "../actions";
+import { userInfo } from "../actions";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
 
   let history = useHistory();
 
@@ -14,15 +19,15 @@ function Login() {
 
   return (
     <div className="login">
-      <form>
+      <div>
         <h3>Sign In</h3>
 
         <div className="form-group">
-          <label>Email address</label>
+          <label>Username</label>
           <input
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Enter name"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -59,6 +64,8 @@ function Login() {
               setEmail("");
               setPassword("");
               redirect();
+              dispatch(login());
+              dispatch(userInfo({ name: email, password: password }));
             }
           }}
         >
@@ -70,7 +77,7 @@ function Login() {
         <Link to="/signup">
           <p className="text-left">SignUp</p>
         </Link>
-      </form>
+      </div>
     </div>
   );
 }

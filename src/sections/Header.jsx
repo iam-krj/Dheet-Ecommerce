@@ -1,21 +1,32 @@
 import React from "react";
+<<<<<<< HEAD
 import { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import './header.css';
+=======
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { login } from "../actions";
+import { useSelector, useDispatch } from "react-redux";
+>>>>>>> f9027508ce441f9e789d2e7b8eb944c037d45bdf
 
 const Header = () => {
+  const loggedin = useSelector((state) => state.loggedin);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const JSONDATA = useSelector((state) => state.products);
   const [searchTerm, setSearchTerm] = useState("");
+<<<<<<< HEAD
   const [resultList,setResultList] = useState([]);
+=======
+
+>>>>>>> f9027508ce441f9e789d2e7b8eb944c037d45bdf
   return (
     <div className="header">
       <Link to="/">
         <div className="title">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Eo_circle_blue_letter-d.svg/768px-Eo_circle_blue_letter-d.svg.png"
-            alt=""
-          />
+          <img src="/img/logo.png" alt="logo" />
           <h2>Dheet Shop</h2>
         </div>
       </Link>
@@ -101,7 +112,18 @@ const Header = () => {
           </svg>
         </Link>
         <Link to="/login">
-          <img src="/img/enter.png" alt="login"></img>
+          {loggedin ? (
+            <span
+              onClick={() => {
+                alert("Do you want to logout ?");
+                dispatch(login());
+              }}
+            >
+              {user.name ? user.name : "User"}
+            </span>
+          ) : (
+            <img src="/img/enter.png" alt="login"></img>
+          )}
         </Link>
       </div>
     </div>

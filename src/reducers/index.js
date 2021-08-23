@@ -5,6 +5,8 @@ import amountReducer from "./amountReducer";
 import transactionsReducer from "./transactionsReducer";
 import bidsListReducer from "./bidsListReducer";
 import userBidsReducer from "./userBidsReducer";
+import loginReducer from "./loginReducer";
+import userInfoReducer from "./userInfoReducer";
 
 const rootReducer = combineReducers({
   art: artReducer,
@@ -13,6 +15,8 @@ const rootReducer = combineReducers({
   bidsList: bidsListReducer,
   userBids: userBidsReducer,
   products: getProductsReducer,
+  loggedin: loginReducer,
+  user: userInfoReducer,
 });
 
 export default rootReducer;
