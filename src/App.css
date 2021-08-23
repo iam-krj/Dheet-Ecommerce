@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* -----------------------------------Header---------------------------------------------------- */
@@ -239,83 +239,86 @@ a {
 
 /* ---------------------------------------------------------------------------------------------------------------- */
 
-.footer-div .first-div{
+.footer-div .first-div {
   background-color: rgb(6, 67, 128);
   width: 100%;
   height: 30px;
 }
-.footer-div{
+.footer-div {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 100px;
   width: 100%;
   height: 410px;
   background-color: rgb(13, 117, 221);
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
-.team-container{
+.team-container {
   float: left;
   width: 50%;
   height: 250px;
 }
-.team-container .dheet-div{
+.team-container .dheet-div {
   margin-left: 110px;
   margin-top: 30px;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
 }
-.team-container .dheet-div svg{
+.team-container .dheet-div svg {
   margin-right: 15px;
   width: 30px;
   height: 30px;
 }
-.footer-div ul{
+.footer-div ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.footer-div li{
+.footer-div li {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
 }
-.footer-div a{
+.footer-div a {
   color: rgba(255, 255, 255, 0.904);
   display: inline-block;
 }
-.footer-div svg{
+.footer-div svg {
   margin-right: 3px;
 }
-.footer-div .members{
+.footer-div .members {
   display: flex;
   justify-content: space-evenly;
 }
 
-.contact-div{
+.contact-div {
   height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.contact-div input, textarea{
+.contact-div input,
+textarea {
   width: 60%;
   padding: 10px;
   font-size: 1rem;
   margin-top: 10px;
   border: 0;
 }
-.contact-div input:focus, textarea:focus{
+.contact-div input:focus,
+textarea:focus {
   outline-color: dodgerblue;
   outline: none;
 }
-.contact-div textarea{
+.contact-div textarea {
   height: 100px;
 }
-.contact-div button{
+.contact-div button {
   padding: 5px 10px 5px 10px;
   align-self: flex-start;
   margin-left: 151.5px;
@@ -327,11 +330,11 @@ a {
   font-size: 1.2rem;
   width: 80px;
 }
-.contact-div button:hover{
+.contact-div button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
-.contact-div .contact-head{
+.contact-div .contact-head {
   display: flex;
   align-items: center;
   margin-left: 150px;
@@ -339,15 +342,15 @@ a {
   margin-bottom: 10px;
   align-self: flex-start;
 }
-.contact-div .contact-head h2{
+.contact-div .contact-head h2 {
   margin-left: 10px;
 }
-.contact-div .contact-head svg{
+.contact-div .contact-head svg {
   color: white;
   width: 30px;
   height: 30px;
 }
-.footer-div .last{
+.footer-div .last {
   width: 90%;
   height: 20%;
   border: 2px solid rgba(255, 255, 255, 0.671);
@@ -360,17 +363,16 @@ a {
   justify-content: space-between;
   padding: 5px;
 }
-#one-last{
+#one-last {
   margin-top: 7px;
 }
-#another-last{
+#another-last {
   display: flex;
   align-items: center;
 }
-#another-last svg{
+#another-last svg {
   margin-left: 5px;
 }
-
 
 /* ---------------------------------------------------------------- p0p3ye------------------------------------------------------------------------------------------------- */
 
@@ -382,4 +384,17 @@ a {
   border: 1px solid black;
   padding: 20px;
   border-radius: 7px;
+}
+
+/* -------------------------------------------------------------Category------------------------------------------------------------------------------------------------ */
+.cat-card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: transform 250ms;
+  margin: 10px;
+}
+.cat-card:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transform: translateY(10px);
 }

@@ -62,7 +62,7 @@ export default function Modal({
           +
         </span>
         <div
-          className="container"
+          className="container info"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -98,12 +98,14 @@ export default function Modal({
               }}
             ></input>
             <br />
-            {bidExists ? "" : <input id="anony" type="checkbox"></input>}
-            {bidExists ? (
-              ""
-            ) : (
-              <span style={{ fontSize: "0.8rem" }}>Bid Anonymously</span>
-            )}
+            <div>
+              {bidExists ? "" : <input id="anony" type="checkbox"></input>}
+              {bidExists ? (
+                ""
+              ) : (
+                <span style={{ fontSize: "0.9rem" }}> Bid Anonymously</span>
+              )}
+            </div>
           </div>
           <button
             className="button"
@@ -131,6 +133,7 @@ export default function Modal({
           </button>
         </div>
         <div>
+          <br></br>
           {bid <= highest_bid ? (
             <li style={{ color: "red" }}>
               The Bid Amount must be greater than current Highest Bid

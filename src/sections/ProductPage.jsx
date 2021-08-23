@@ -11,8 +11,7 @@ export default function ProductPage({ setPage }) {
   const productName = product.Name;
   const productOwner = product.Owner;
   const productId = product.ID;
-  const description =
-    "Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT Very good NFT ";
+  const description = product.Description;
   const endTime =
     new Date(2021, 7, 25).getTime() / 1000 - new Date().getTime() / 1000;
   const username = "Hero"; //Add here

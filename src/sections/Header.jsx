@@ -62,20 +62,6 @@ const Header = () => {
           );
         })}
       <div className="right-nav">
-        <ul>
-          <li>
-            <a href="">Marketplace</a>
-          </li>
-          <li>
-            <a href="">Stats</a>
-          </li>
-          <li>
-            <a href="">Resources</a>
-          </li>
-          <li>
-            <a href="">Create</a>
-          </li>
-        </ul>
         <Link to="/bids">
           <svg
             stroke="currentColor"

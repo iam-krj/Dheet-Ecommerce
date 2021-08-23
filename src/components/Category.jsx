@@ -76,7 +76,7 @@ const Category = () => {
       >
         {categoryProducts.map((pr) => (
           <div
-            className="d-flex flex-column align-items-center"
+            className="d-flex flex-column align-items-center cat-card"
             style={{
               width: "20%",
               padding: "10px",

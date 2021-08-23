@@ -46,7 +46,7 @@ const FrontPage = ({ products }) => {
         </div>
       </div>
       <div className="div">
-        <h1>Exclusive OpenSea drops</h1>
+        <h1>Exclusive drops</h1>
       </div>
       <div className="cards">
         {products.slice(0, 4).map((art) => (
