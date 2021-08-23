@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Dheet-Ecommerce/static/css/main.500983fa.chunk.css",
-    "main.js": "/Dheet-Ecommerce/static/js/main.3e5b27d1.chunk.js",
-    "main.js.map": "/Dheet-Ecommerce/static/js/main.3e5b27d1.chunk.js.map",
+    "main.js": "/Dheet-Ecommerce/static/js/main.743962a8.chunk.js",
+    "main.js.map": "/Dheet-Ecommerce/static/js/main.743962a8.chunk.js.map",
     "runtime-main.js": "/Dheet-Ecommerce/static/js/runtime-main.8a6b998d.js",
     "runtime-main.js.map": "/Dheet-Ecommerce/static/js/runtime-main.8a6b998d.js.map",
     "static/css/2.f11b92c5.chunk.css": "/Dheet-Ecommerce/static/css/2.f11b92c5.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.f11b92c5.chunk.css",
     "static/js/2.a59eec2b.chunk.js",
     "static/css/main.500983fa.chunk.css",
-    "static/js/main.3e5b27d1.chunk.js"
+    "static/js/main.743962a8.chunk.js"
   ]
 }
