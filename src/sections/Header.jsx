@@ -1,11 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import './header.css';
 
 const Header = () => {
   const JSONDATA = useSelector((state) => state.products);
   const [searchTerm, setSearchTerm] = useState("");
+  const [resultList,setResultList] = useState([]);
   return (
     <div className="header">
       <Link to="/">
@@ -21,7 +23,7 @@ const Header = () => {
         type="text"
         placeholder="Search items, collections, and accounts"
       /> */}
-
+      <div className = "search">
       <input
         className="Search2"
         type="text"
@@ -30,10 +32,10 @@ const Header = () => {
           setSearchTerm(event.target.value);
         }}
       />
-
-      {JSONDATA.filter((val) => {
-        if (searchTerm == "") {
-          return val;
+ 
+      {useEffect(()=>{setResultList(JSONDATA.filter((val) => {
+        if (searchTerm === "") {
+          return [];
         } else if (
           val.Category.toLowerCase().includes(searchTerm.toLowerCase())
         ) {
@@ -41,26 +43,36 @@ const Header = () => {
         } else if (val.Name.toLowerCase().includes(searchTerm.toLowerCase())) {
           return val;
         }
+        return "";
       })
-        .slice(0, 5)
-        .map((val, key) => {
+        .slice(0, 5))},[searchTerm,JSONDATA])
+        }
+
+        {
+        resultList.length?<div id = "search-results">
+        { 
+          
+        resultList.map((val, key) => {
+          console.log(searchTerm,";;;;;",resultList);
           return (
-            <div className="Search2">
-              {searchTerm.length != 0 && (
-                <a
-                  className="useer"
-                  href={val.Image}
-                  onChange="user"
-                  key={key}
-                  target="_blank"
-                >
-                  <p> {val.Name} </p>{" "}
-                </a>
-              )}
-            </div>
-            // )}
+            searchTerm.length !== 0 ? (
+              <a
+                className="useer"
+                href={val.Image}
+                onChange="user"
+                key={key}
+                target="_blank"
+                rel = "noreferrer"
+              >
+                {val.Name}{" "}
+              </a>
+            ):""
           );
         })}
+          </div>:""}
+            
+            </div>
+     
       <div className="right-nav">
         <ul>
           <li>
@@ -105,7 +117,7 @@ const Header = () => {
           </svg>
         </Link>
         <Link to="/login">
-          <img src="/img/enter.png"></img>
+          <img src="/img/enter.png" alt = ""></img>
         </Link>
       </div>
     </div>

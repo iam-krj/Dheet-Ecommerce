@@ -79,7 +79,7 @@ body {
   border-radius: 5px;
   margin: 20px auto;
 }
-th {
+.table-striped th {
   text-align: center;
 }
 .listings hr {
