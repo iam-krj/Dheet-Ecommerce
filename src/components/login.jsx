@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  let history = useHistory();
+
+  const redirect = () => {
+    history.push("/");
+  };
+
   return (
     <div className="login">
       <form>
@@ -13,6 +23,8 @@ function Login() {
             type="email"
             className="form-control"
             placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -22,6 +34,8 @@ function Login() {
             type="password"
             className="form-control"
             placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -38,7 +52,16 @@ function Login() {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary btn-block">
+        <button
+          className="btn btn-primary btn-block"
+          onClick={() => {
+            if (password && email) {
+              setEmail("");
+              setPassword("");
+              redirect();
+            }
+          }}
+        >
           Submit
         </button>
         <p className="forgot-password">
