@@ -39,7 +39,7 @@ const Header = () => {
         } else if (val.Name.toLowerCase().includes(searchTerm.toLowerCase())) {
           return val;
         }
-        return val;
+        // return val;
       })
         .slice(0, 5)
         .map((val, key) => {
