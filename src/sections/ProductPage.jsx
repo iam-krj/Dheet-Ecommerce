@@ -163,8 +163,8 @@ export default function ProductPage({ setPage }) {
                     ></img>{" "}
                     {item.bid}
                   </th>
-                  <th>{"₹ " + (item.bid * 243974.0).toFixed(2)}</th>
-                  <th>{item.name}</th>
+                  <th><span style = {{fontFamily:"Arial, Helvetica, sans-serif"}}>₹</span>{(item.bid * 243974.0).toFixed(2)}</th>
+                  <th>{item.name}</th> 
                 </tr>
               );
             })}
