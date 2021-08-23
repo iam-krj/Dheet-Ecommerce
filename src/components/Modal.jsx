@@ -141,11 +141,13 @@ export default function Modal({
           ) : (
             ""
           )}
+          <br></br>
           {bid > wallet_amt && !bidExists ? (
             <li style={{ color: "red" }}>Not enough money in the wallet</li>
           ) : (
             ""
           )}
+          <br></br>
           {bidExists &&
           bid > parseFloat(wallet_amt) + parseFloat(existingBid.bid) ? (
             <li style={{ color: "red" }}>Not enough money in the wallet</li>
