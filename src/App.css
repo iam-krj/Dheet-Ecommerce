@@ -1,7 +1,9 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* -----------------------------------Header---------------------------------------------------- */
@@ -237,34 +239,138 @@ a {
 
 /* ---------------------------------------------------------------------------------------------------------------- */
 
-.footer {
+.footer-div .first-div{
+  background-color: rgb(6, 67, 128);
+  width: 100%;
+  height: 30px;
+}
+.footer-div{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 100px;
   width: 100%;
-  height: 60px;
+  height: 410px;
   background-color: rgb(13, 117, 221);
   color: #fff;
-  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.team-container{
+  float: left;
+  width: 50%;
+  height: 250px;
+}
+.team-container .dheet-div{
+  margin-left: 110px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.team-container .dheet-div svg{
+  margin-right: 15px;
+  width: 30px;
+  height: 30px;
+}
+.footer-div ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-div li{
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  font-size: 1.1rem;
 }
-.footer h1 {
-  font-size: 1rem;
-  padding-top: 10px;
+.footer-div a{
+  color: rgba(255, 255, 255, 0.904);
   display: inline-block;
 }
-.footer svg {
-  width: 30px;
-  height: 25px;
-  color: #fff;
+.footer-div svg{
+  margin-right: 3px;
+}
+.footer-div .members{
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.footer a:hover {
+.contact-div{
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-div input, textarea{
+  width: 60%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+  border: 0;
+}
+.contact-div input:focus, textarea:focus{
+  outline-color: dodgerblue;
+  outline: none;
+}
+.contact-div textarea{
+  height: 100px;
+}
+.contact-div button{
+  padding: 5px 10px 5px 10px;
+  align-self: flex-start;
+  margin-left: 151.5px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: dodgerblue;
+  color: #fff;
+  border: 0;
+  font-size: 1.2rem;
+  width: 80px;
+}
+.contact-div button:hover{
   cursor: pointer;
   opacity: 0.8;
 }
+.contact-div .contact-head{
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.contact-div .contact-head h2{
+  margin-left: 10px;
+}
+.contact-div .contact-head svg{
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+.footer-div .last{
+  width: 90%;
+  height: 20%;
+  border: 2px solid rgba(255, 255, 255, 0.671);
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  margin-left: 5%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+#one-last{
+  margin-top: 7px;
+}
+#another-last{
+  display: flex;
+  align-items: center;
+}
+#another-last svg{
+  margin-left: 5px;
+}
+
 
 /* ---------------------------------------------------------------- p0p3ye------------------------------------------------------------------------------------------------- */
 
